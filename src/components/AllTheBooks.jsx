@@ -14,7 +14,7 @@ const renderBooks = () => {
     <Row>
       {scifiBooks.map((book) => {
         return (
-          <Col xs={2} sm={2} md={2} key={book.asin}>
+          <Col xs={6} sm={4} md={3} key={book.asin}>
             <Card className="card-box mb-3">
               <Card.Img className="card-images" variant="top" src={book.img} />
               <Card.Body>
@@ -31,7 +31,7 @@ const renderBooks = () => {
 };
 export default renderBooks;
 
-// Oppure
+// Oppure senza react-bootstrap
 
 // const renderBooks = () => {
 //   return (
