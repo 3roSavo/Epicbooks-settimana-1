@@ -8,9 +8,12 @@ class singleBook extends Component {
   render() {
     return (
       <Card
-        onClick={this.setState({
-          selected,
-        })}
+        className={this.state.selected === true && "selected-card"} // OPPURE -> {this.state.selected ? "selected-card : "" }
+        onClick={() => {
+          this.setState({
+            selected: !this.state.selected, // OPPURE -> selected : this.state.selected ? false : true
+          });
+        }}
       >
         <Card.Img
           style={{ height: "300px" }}

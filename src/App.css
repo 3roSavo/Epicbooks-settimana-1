@@ -5,3 +5,7 @@
 .card-box {
     height: 500px;
 }
+
+.selected-card {
+    border:3px solid red;
+}
