@@ -1,13 +1,18 @@
 import { Component } from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import CommentList from "./CommentList";
+import { Spinner } from "react-bootstrap";
 
 class CommentArea extends Component {
   state = {
     commenti: [],
+    loading: false
   };
 
   getComments = () => {
+
+    this.setState({ loading: true })
+
     fetch(
       "https://striveschool-api.herokuapp.com/api/comments/" +
       this.props.bookAsin,
@@ -28,10 +33,12 @@ class CommentArea extends Component {
       .then((commentsArray) => {
         this.setState({
           commenti: commentsArray,
+          loading: false
         });
       })
       .catch((error) => {
         console.log(error);
+        this.setState({ loading: false })
       });
   };
 
@@ -52,6 +59,7 @@ class CommentArea extends Component {
     return (
       <ListGroup className=" my-3">
         <CommentList comments={this.state.commenti} commentsModifyFunction={this.props.commentsModifyFunction} />
+        {this.state.loading && <div className="text-center mt-3 mb-2"><Spinner animation="border" style={{ color: "rgb(62, 118, 206)" }} /></div>}
       </ListGroup>
     );
   }
