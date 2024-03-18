@@ -42,6 +42,7 @@ class singleBook extends Component {
               <CommentArea
                 bookAsin={this.props.oneBook.asin}
                 commentsModify={this.state.commentsModify}
+                commentsModifyFunction={this.modifyCommentFunction}
               />
 
               <AddComment

@@ -36,9 +36,24 @@ const AddComment = ({ bookAsin, commentsModify }) => {
         }
       })
       .then((data) => {
+
         console.log(data);
+
         alert("caricamento commento andato a buon fine");
+
         commentsModify();
+
+        setNewComment({
+          comment: "",
+          rate: "1",
+          elementId: bookAsin,
+        })
+
+        setStar1(true);
+        setStar2(false);
+        setStar3(false);
+        setStar4(false);
+        setStar5(false);
       })
       .catch((err) => {
         alert(err);
