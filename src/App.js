@@ -10,7 +10,7 @@ import BookList from "./components/BookList";
 function App() {
   return (
     <>
-      <div className="container">
+      <div className="container-fluid">
         <header>
           <MyNav />
         </header>

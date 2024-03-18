@@ -9,3 +9,12 @@
 .selected-card {
     border:3px solid red;
 }
+
+.pointer {
+    cursor: pointer;
+}
+
+.star-icon {
+    font-size: 20px;
+    cursor: pointer;
+}

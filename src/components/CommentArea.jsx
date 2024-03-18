@@ -14,7 +14,7 @@ class CommentArea extends Component {
       {
         headers: {
           Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTNhNjkzNWY2ZTNkZDAwMTQ5NWU0NjMiLCJpYXQiOjE2OTgzMjY4MzcsImV4cCI6MTY5OTUzNjQzN30.3F0SFD0YaApxvUgfIKdtUCWZ3vRBkfg7b3O6dgWHrdk",
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWI1OGUzY2Y2MTAwMzAwMTljYjk5OTQiLCJpYXQiOjE3MTA3NzIxNDYsImV4cCI6MTcxMTk4MTc0Nn0.LyZS7K4Q2SIg5FhBzqt_NuQyvLQwdqLpohtjh-BB0Z0",
         },
       }
     )
@@ -34,13 +34,23 @@ class CommentArea extends Component {
         console.log(error);
       });
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.commentsModify !== this.props.commentsModify) {
+      console.log(prevProps.commentsModify);
+      console.log(this.props.commentsModify);
+      //alert("Lo stato è stato aggiornato");
+      this.getComments();
+    }
+  }
+
   componentDidMount() {
     this.getComments();
   }
 
   render() {
     return (
-      <ListGroup>
+      <ListGroup className=" my-3">
         <CommentList comments={this.state.commenti} />
       </ListGroup>
     );
