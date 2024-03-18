@@ -41,7 +41,7 @@ const CommentList = ({ comments, commentsModifyFunction }) => {
 
       {comments.map((oneComment) => {
         return (
-          <div key={oneComment._id}>
+          <div key={oneComment._id} className=" mb-1">
             <ListGroup.Item>
               <div><strong>{oneComment.author}</strong> dice:</div>
               <p>{oneComment.comment}</p>

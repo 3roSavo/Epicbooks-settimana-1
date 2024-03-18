@@ -22,7 +22,7 @@ class bookList extends Component {
           }}
         />
 
-        <Row>
+        <Row className=" gy-4">
           {this.props.booksArray
             .filter((book) => {
               return book.title

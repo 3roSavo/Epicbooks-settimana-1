@@ -10,7 +10,7 @@ import BookList from "./components/BookList";
 function App() {
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid bg-light">
         <header>
           <MyNav />
         </header>

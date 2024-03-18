@@ -18,7 +18,7 @@ class singleBook extends Component {
     return (
       <Card
         className={
-          this.state.selected === true && "selected-card"
+          (this.state.selected === true && "selected-card") + " shadow-lg"
         } /* OPPURE -> {this.state.selected ? "selected-card : ""  }*/
       >
         <Card.Img
