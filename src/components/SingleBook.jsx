@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Card from "react-bootstrap/Card";
+import CommentArea from "./CommentArea";
 
 class singleBook extends Component {
   state = {
@@ -22,6 +23,10 @@ class singleBook extends Component {
         />
         <Card.Body>
           <Card.Title>{this.props.oneBook.title}</Card.Title>
+
+          {this.state.selected && (
+            <CommentArea bookAsin={this.props.oneBook.asin} />
+          )}
         </Card.Body>
       </Card>
     );
